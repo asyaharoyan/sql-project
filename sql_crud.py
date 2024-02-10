@@ -80,12 +80,50 @@ tim_berners_lee = Programmer(
 
 # add each instance of our programmers to our session
 # session.add(ada_lovelace)
-session.add(ada_lovelace)
-session.add(ada_lovelace)
-session.add(ada_lovelace)
+# session.add(alan_turing)
+# session.add(grace_hopper)
+# session.add(margaret_hamilton)
+# session.add(bill_gates)
+# session.add(tim_berners_lee)
 
 # commit our session to the database
-session.commit()
+# session.commit()
+
+# updating a single record
+# programmer = session.query(Programmer).filter_by(id=2).first()
+# programmer.famous_for = "Worlds President"
+
+# session.commit()
+
+# updating multipule record
+# people = session.query(Programmer)
+# for person in people:
+#     if person.gender == "F":
+#         person.gender = "Female"
+#     elif person.gender == "M":
+#         person.gender = "Male"
+#     else:
+#         print("The gender has not defined")
+#     session.commit()
+
+# delete a single record
+# fname = input("Enter the first name: ")
+# lname = input("Enter the last name: ")
+# programmer = session.query(Programmer).filter_by(first_name=fname, last_name=lname).first()
+
+# defensive programming
+# if programmer is not None:
+#     print("Programmer found:", programmer.first_name + " " + programmer.last_name)
+#     confirmation = input("Are you sure you want to delete this resord? (y/n)")
+#     if confirmation.lower() == "y":
+#         session.delete(programmer)
+#         session.commit()
+#         print("Programmer has been deleted")
+#     else:
+#         print("Programmer not deleted")
+# else:
+#     print("No  records found")
+
 
 # query the database to find all Programmers
 programmers = session.query(Programmer)
